@@ -2,7 +2,7 @@ import returnErrService from "../helps/returnErrService.mjs";
 import db from "../models/index.mjs";
 import funcReturn from "../helps/funcReturn.mjs";
 import * as calendarTeamService from "./calendarTeamService.mjs";
-const { Op } = require("sequelize");
+import { Op } from "sequelize";
 
 const handleGetOneCalendar = async (data) => {
     let calendar = await db.Calendar.findOne({

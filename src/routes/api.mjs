@@ -1,14 +1,3 @@
-// import express from "express";
-
-// import {
-//     upload,
-//     uploadAvatar,
-//     uploadAvatarUser,
-//     uploadMatch,
-//     uploadStadium,
-// } from "../middleware/multer.mjs";
-
-// import jwtAction from "../middleware/jwtAction.mjs";
 import initApiUser from "./apiUser.mjs";
 import initApiSeason from "./apiSeason.mjs";
 import initApiTeam from "./apiTeam.mjs";
@@ -25,8 +14,6 @@ import initApiBill from "./apiBill.mjs";
 import initApiEmail from "./apiEmail.mjs";
 import initApiComment from "./apiComment.mjs";
 import initApiFeedback from "./apiFeedback.mjs";
-
-// const router = express.Router();
 
 const initApiRoutes = (app) => {
     initApiUser(app);
@@ -45,8 +32,6 @@ const initApiRoutes = (app) => {
     initApiEmail(app);
     initApiComment(app);
     initApiFeedback(app);
-
-    // router.all("*", jwtAction.handleCheckToken);
 };
 
 export default initApiRoutes;
