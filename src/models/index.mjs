@@ -48,12 +48,11 @@
 // db.Sequelize = Sequelize;
 
 // module.exports = db;
-
 import fs from "fs";
 import path from "path";
 import Sequelize from "sequelize";
 import process from "process";
-import config from "../config/config.json";
+import config from "../config/config.json" assert { type: "json" };
 
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || "development";
