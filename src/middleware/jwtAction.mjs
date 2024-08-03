@@ -2,21 +2,22 @@ import jwt from "jsonwebtoken";
 import funcReturn from "../helps/funcReturn.mjs";
 import returnErrService from "../helps/returnErrService.mjs";
 import { arrPath } from "../helps/listPathNotCheck.mjs";
-require("dotenv").config();
+import dotenv from "dotenv";
+dotenv.config();
 
-const createJwtAccess = (payload) => {
+export const createJwtAccess = (payload) => {
     let key = process.env.JWT_SECRET;
     let token = jwt.sign(payload, key);
     return token;
 };
 
-const createJwtRefresh = (payload) => {
+export const createJwtRefresh = (payload) => {
     let key = process.env.JWT_SERECT_REFRESH;
     let token = jwt.sign(payload, key);
     return token;
 };
 
-const verifyToken = (token) => {
+export const verifyToken = (token) => {
     let key = process.env.JWT_SECRET;
     let decode;
     try {
@@ -27,7 +28,7 @@ const verifyToken = (token) => {
     return decode;
 };
 
-const verifyRefreshToken = (token) => {
+export const verifyRefreshToken = (token) => {
     let key = process.env.JWT_SERECT_REFRESH;
     let decode;
     try {
@@ -38,7 +39,7 @@ const verifyRefreshToken = (token) => {
     return decode;
 };
 
-const handleCheckToken = (req, res, next) => {
+export const handleCheckToken = (req, res, next) => {
     if (arrPath.includes(req.path)) return next();
 
     try {
@@ -72,7 +73,7 @@ const handleCheckToken = (req, res, next) => {
     // next();
 };
 
-const handleCheckRoleAdmin = (req, res) => {
+export const handleCheckRoleAdmin = (req, res) => {
     try {
         const path = req.headers.cookie;
         if (!path) {
@@ -100,13 +101,4 @@ const handleCheckRoleAdmin = (req, res) => {
     } catch (err) {
         console.log(err);
     }
-};
-
-module.exports = {
-    createJwtAccess,
-    createJwtRefresh,
-    verifyToken,
-    verifyRefreshToken,
-    handleCheckToken,
-    handleCheckRoleAdmin,
 };
