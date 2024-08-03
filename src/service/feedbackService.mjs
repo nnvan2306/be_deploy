@@ -247,7 +247,7 @@ const updateDisLikeFeedbackService = async (
     }
 };
 
-export const deleteFeedbackByCommentId = async (commentId) => {
+const deleteFeedbackByCommentId = async (commentId) => {
     try {
         await db.Feedback.destroy({
             where: {
