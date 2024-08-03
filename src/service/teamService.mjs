@@ -1,4 +1,4 @@
-import db from "../models/index";
+import db from "../models/index.mjs";
 import returnErrService from "../helps/returnErrService.mjs";
 import { handleRemoveLogo } from "../middleware/removeImage.mjs";
 import funcReturn from "../helps/funcReturn.mjs";

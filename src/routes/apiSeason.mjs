@@ -1,5 +1,5 @@
-import jwtAction from "../middleware/jwtAction";
-import seasonController from "../controller/seasonController";
+import jwtAction from "../middleware/jwtAction.mjs";
+import seasonController from "../controller/seasonController.mjs";
 import express from "express";
 
 const router = express.Router();

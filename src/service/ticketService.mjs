@@ -1,5 +1,5 @@
 import returnErrService from "../helps/returnErrService.mjs";
-import db from "../models/index";
+import db from "../models/index.mjs";
 import funcReturn from "../helps/funcReturn.mjs";
 import { where } from "sequelize";
 

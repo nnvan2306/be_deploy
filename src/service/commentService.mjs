@@ -1,8 +1,8 @@
-import db from "../models/index";
+import db from "../models/index.mjs";
 import returnErrService from "../helps/returnErrService.mjs";
 import funcReturn from "../helps/funcReturn.mjs";
 import likeCommentService from "./likeCommentService.mjs";
-import dislikeCommentService from "./dislikeCommentService";
+import dislikeCommentService from "./dislikeCommentService.mjs";
 import feedbackService from "./feedbackService.mjs";
 
 const handleGetOneComment = async (id) => {

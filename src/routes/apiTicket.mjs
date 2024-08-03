@@ -1,5 +1,5 @@
-import jwtAction from "../middleware/jwtAction";
-import ticketController from "../controller/ticketController";
+import jwtAction from "../middleware/jwtAction.mjs";
+import ticketController from "../controller/ticketController.mjs";
 import express from "express";
 
 const router = express.Router();

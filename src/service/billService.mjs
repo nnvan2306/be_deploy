@@ -1,7 +1,7 @@
-import returnErrService from "../helps/returnErrService";
-import db from "../models/index";
-import funcReturn from "../helps/funcReturn";
-import ticketService from "./ticketService";
+import returnErrService from "../helps/returnErrService.mjs";
+import db from "../models/index.mjs";
+import funcReturn from "../helps/funcReturn.mjs";
+import ticketService from "./ticketService.mjs";
 
 const handleCheckBillExits = async (uuid) => {
     let bill = await db.Bill.findOne({

@@ -2,7 +2,7 @@ import funcReturn from "../helps/funcReturn.mjs";
 import returnErrService from "../helps/returnErrService.mjs";
 import returnInfoEmpty from "../helps/returnInfoEmpty.mjs";
 // import { handleSocket } from "../middleware/socket";
-import commentService from "../service/commentService";
+import commentService from "../service/commentService.mjs";
 
 class commentController {
     async handleCreateComment(req, res) {

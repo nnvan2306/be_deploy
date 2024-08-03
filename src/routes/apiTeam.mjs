@@ -1,6 +1,6 @@
-import jwtAction from "../middleware/jwtAction";
-import teamController from "../controller/teamController";
-import { upload } from "../middleware/multer";
+import jwtAction from "../middleware/jwtAction.mjs";
+import teamController from "../controller/teamController.mjs";
+import { upload } from "../middleware/multer.mjs";
 import express from "express";
 
 const router = express.Router();

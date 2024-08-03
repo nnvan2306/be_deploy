@@ -1,4 +1,4 @@
-import emailController from "../controller/emailController";
+import emailController from "../controller/emailController.mjs";
 import express from "express";
 
 const router = express.Router();

@@ -1,7 +1,7 @@
-import funcReturn from "../helps/funcReturn";
-import returnErrService from "../helps/returnErrService";
-import returnInfoEmpty from "../helps/returnInfoEmpty";
-import billService from "../service/billService";
+import funcReturn from "../helps/funcReturn.mjs";
+import returnErrService from "../helps/returnErrService.mjs";
+import returnInfoEmpty from "../helps/returnInfoEmpty.mjs";
+import billService from "../service/billService.mjs";
 
 class billController {
     async handleCreateBill(req, res) {

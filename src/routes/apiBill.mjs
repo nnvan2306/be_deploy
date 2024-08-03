@@ -1,6 +1,6 @@
 import express from "express";
-import billController from "../controller/billController";
-import jwtAction from "../middleware/jwtAction";
+import billController from "../controller/billController.mjs";
+import jwtAction from "../middleware/jwtAction.mjs";
 
 const router = express.Router();
 

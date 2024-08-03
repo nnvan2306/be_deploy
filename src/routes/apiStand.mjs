@@ -1,5 +1,5 @@
-import jwtAction from "../middleware/jwtAction";
-import standController from "../controller/standController";
+import jwtAction from "../middleware/jwtAction.mjs";
+import standController from "../controller/standController.mjs";
 import express from "express";
 
 const router = express.Router();

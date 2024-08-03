@@ -1,6 +1,6 @@
-import jwtAction from "../middleware/jwtAction";
-import matchController from "../controller/matchController";
-import { uploadMatch } from "../middleware/multer";
+import jwtAction from "../middleware/jwtAction.mjs";
+import matchController from "../controller/matchController.mjs";
+import { uploadMatch } from "../middleware/multer.mjs";
 import express from "express";
 
 const router = express.Router();

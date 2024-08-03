@@ -1,8 +1,8 @@
 module.exports = {
     apps: [
         {
-            name: "app1",
-            script: "./server.js",
+            name: "be_deploy",
+            script: "./src/server.js",
             env: {
                 PORT: 8080,
                 REACT_URL: "http://localhost:5173",

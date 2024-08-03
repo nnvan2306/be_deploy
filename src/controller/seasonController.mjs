@@ -1,7 +1,7 @@
 import funcReturn from "../helps/funcReturn.mjs";
 import returnErrService from "../helps/returnErrService.mjs";
 import returnInfoEmpty from "../helps/returnInfoEmpty.mjs";
-import seasonService from "../service/seasonService";
+import seasonService from "../service/seasonService.mjs";
 
 class seasonController {
     async handleCreateSeason(req, res) {

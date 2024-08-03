@@ -1,7 +1,7 @@
 import funcReturn from "../helps/funcReturn.mjs";
 import returnErrService from "../helps/returnErrService.mjs";
 import returnInfoEmpty from "../helps/returnInfoEmpty.mjs";
-import ticketService from "../service/ticketService";
+import ticketService from "../service/ticketService.mjs";
 
 class TicketController {
     async handleCreateTicket(req, res) {

@@ -4,7 +4,7 @@ import {
     updateDisLikeCommentService,
     deleteCommentService,
     getLimitCommentService,
-} from "./commentService";
+} from "./commentService.mjs";
 
 import {
     createFeedbackService,

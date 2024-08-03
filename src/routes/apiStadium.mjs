@@ -1,6 +1,6 @@
-import jwtAction from "../middleware/jwtAction";
-import stadiumController from "../controller/stadiumController";
-import { uploadStadium } from "../middleware/multer";
+import jwtAction from "../middleware/jwtAction.mjs";
+import stadiumController from "../controller/stadiumController.mjs";
+import { uploadStadium } from "../middleware/multer.mjs";
 import express from "express";
 
 const router = express.Router();

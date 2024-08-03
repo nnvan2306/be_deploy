@@ -1,4 +1,4 @@
-import feedbackController from "../controller/feedbackController";
+import feedbackController from "../controller/feedbackController.mjs";
 import express from "express";
 
 const router = express.Router();

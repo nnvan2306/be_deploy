@@ -1,30 +1,30 @@
-import express from "express";
+// import express from "express";
 
-import {
-    upload,
-    uploadAvatar,
-    uploadAvatarUser,
-    uploadMatch,
-    uploadStadium,
-} from "../middleware/multer";
+// import {
+//     upload,
+//     uploadAvatar,
+//     uploadAvatarUser,
+//     uploadMatch,
+//     uploadStadium,
+// } from "../middleware/multer.mjs";
 
-import jwtAction from "../middleware/jwtAction";
-import initApiUser from "./apiUser";
-import initApiSeason from "./apiSeason";
-import initApiTeam from "./apiTeam";
-import initApiPlayer from "./apiPlayer";
-import initApiStatistic from "./apiStatistic";
-import initApiRating from "./apiRating";
-import initApiMatch from "./apiMatch";
-import initApiScore from "./apiScore";
-import initApiStadium from "./apiStadium";
-import initApiStand from "./apiStand";
-import initApiCalendar from "./apiCalendar";
-import initApiTicket from "./apiTicket";
-import initApiBill from "./apiBill";
-import initApiEmail from "./apiEmail";
-import initApiComment from "./apiComment";
-import initApiFeedback from "./apiFeedback";
+// import jwtAction from "../middleware/jwtAction.mjs";
+import initApiUser from "./apiUser.mjs";
+import initApiSeason from "./apiSeason.mjs";
+import initApiTeam from "./apiTeam.mjs";
+import initApiPlayer from "./apiPlayer.mjs";
+import initApiStatistic from "./apiStatistic.mjs";
+import initApiRating from "./apiRating.mjs";
+import initApiMatch from "./apiMatch.mjs";
+import initApiScore from "./apiScore.mjs";
+import initApiStadium from "./apiStadium.mjs";
+import initApiStand from "./apiStand.mjs";
+import initApiCalendar from "./apiCalendar.mjs";
+import initApiTicket from "./apiTicket.mjs";
+import initApiBill from "./apiBill.mjs";
+import initApiEmail from "./apiEmail.mjs";
+import initApiComment from "./apiComment.mjs";
+import initApiFeedback from "./apiFeedback.mjs";
 
 // const router = express.Router();
 

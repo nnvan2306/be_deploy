@@ -1,6 +1,6 @@
 import funcReturn from "../helps/funcReturn.mjs";
 import returnErrService from "../helps/returnErrService.mjs";
-import scoredService from "../service/scoredService";
+import scoredService from "../service/scoredService.mjs";
 import returnInfoEmpty from "../helps/returnInfoEmpty.mjs";
 
 class scoredController {

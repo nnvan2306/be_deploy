@@ -1,10 +1,10 @@
 import express from "express";
-import testConnection from "./config/connectDb";
-import initApiRoutes from "./routes/api";
-import configCors from "./config/configCors";
+import testConnection from "./config/connectDb.mjs";
+import initApiRoutes from "./routes/api.mjs";
+import configCors from "./config/configCors.mjs";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
-import { createCommentSocket } from "./service/socketComment";
+import { createCommentSocket } from "./service/socketComment.mjs";
 require("dotenv").config();
 
 const app = express();

@@ -1,5 +1,5 @@
-import calendarController from "../controller/calendarController";
-import jwtAction from "../middleware/jwtAction";
+import calendarController from "../controller/calendarController.mjs";
+import jwtAction from "../middleware/jwtAction.mjs";
 import express from "express";
 
 const router = express.Router();

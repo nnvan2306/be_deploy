@@ -1,4 +1,4 @@
-import db from "../models/index";
+import db from "../models/index.mjs";
 import bcrypt from "bcryptjs";
 import {
     createJwtAccess,

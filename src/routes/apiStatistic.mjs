@@ -1,5 +1,5 @@
-import jwtAction from "../middleware/jwtAction";
-import statisticController from "../controller/statisticController";
+import jwtAction from "../middleware/jwtAction.mjs";
+import statisticController from "../controller/statisticController.mjs";
 import express from "express";
 
 const router = express.Router();

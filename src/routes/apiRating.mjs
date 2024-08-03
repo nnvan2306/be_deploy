@@ -1,5 +1,5 @@
-import jwtAction from "../middleware/jwtAction";
-import ratingController from "../controller/ratingController";
+import jwtAction from "../middleware/jwtAction.mjs";
+import ratingController from "../controller/ratingController.mjs";
 import express from "express";
 
 const router = express.Router();
