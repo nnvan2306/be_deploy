@@ -1,21 +1,30 @@
 import express from "express";
+import { createServer } from "http";
+import { Server as SocketIO } from "socket.io";
 import testConnection from "./config/connectDb.mjs";
 import initApiRoutes from "./routes/api.mjs";
 import configCors from "./config/configCors.mjs";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import { createCommentSocket } from "./service/socketComment.mjs";
-require("dotenv").config();
+import dotenv from "dotenv";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+
+dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
-const http = require("http").createServer(app);
+const http = createServer(app);
 const PORT = process.env.PORT || 8081;
 
 // config cors
 configCors(app);
 
 //connect socket
-const io = require("socket.io")(http, {
+const io = new SocketIO(http, {
     cors: {
         origin: "http://localhost:3000",
         methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
@@ -52,5 +61,5 @@ app.use("/v1/images", express.static(__dirname + "/public/avatarUsers"));
 initApiRoutes(app);
 
 http.listen(PORT, () => {
-    console.log("backend is running on post :", PORT);
+    console.log("backend is running on port:", PORT);
 });
