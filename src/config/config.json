@@ -3,7 +3,7 @@
     "username": "root",
     "password": null,
     "database": "nha",
-    "host": "127.0.0.4",
+    "host": "127.0.0.1",
     "dialect": "mysql",
     "logging":false,
     "freezeTableName": true
@@ -12,14 +12,14 @@
     "username": "root",
     "password": null,
     "database": "database_test",
-    "host": "127.0.0.2",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
     "password": null,
     "database": "database_production",
-    "host": "127.0.0.3",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   }
 }
