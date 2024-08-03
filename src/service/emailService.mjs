@@ -2,7 +2,7 @@ import funcReturn from "../helps/funcReturn.mjs";
 import returnErrService from "../helps/returnErrService.mjs";
 import dotenv from "dotenv";
 dotenv.config();
-const nodemailer = require("nodemailer");
+import nodemailer from "nodemailer";
 
 const sendEmailService = async (email) => {
     try {
