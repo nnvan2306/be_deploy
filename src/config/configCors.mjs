@@ -1,4 +1,5 @@
-require("dotenv").config(); // sd .env
+import dotenv from "dotenv";
+dotenv.config();
 
 export default function configCors(app) {
     app.use((req, res, next) => {
