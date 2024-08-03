@@ -1,7 +1,6 @@
 import returnErrService from "../helps/returnErrService.mjs";
 import db from "../models/index.mjs";
 import funcReturn from "../helps/funcReturn.mjs";
-const { Op } = require("sequelize");
 
 const createCalendarTeamService = async (hostId, guestId, calendarId) => {
     try {

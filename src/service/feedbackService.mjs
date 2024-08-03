@@ -1,8 +1,8 @@
 import db from "../models/index.mjs";
 import returnErrService from "../helps/returnErrService.mjs";
 import funcReturn from "../helps/funcReturn.mjs";
-import likeFeedbackService from "./likeFeedbackservice.mjs";
-import dislikeFeedbackService from "./dislikeFeedbackService.mjs";
+import * as likeFeedbackService from "./likeFeedbackservice.mjs";
+import * as dislikeFeedbackService from "./dislikeFeedbackService.mjs";
 
 const handleGetOneFeedback = async (id) => {
     let feedback = await db.Feedback.findOne({
