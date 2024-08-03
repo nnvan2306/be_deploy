@@ -14,6 +14,7 @@ import initApiBill from "./apiBill.mjs";
 import initApiEmail from "./apiEmail.mjs";
 import initApiComment from "./apiComment.mjs";
 import initApiFeedback from "./apiFeedback.mjs";
+import initApiTest from "./apiTest.mjs";
 
 const initApiRoutes = (app) => {
     initApiUser(app);
@@ -32,6 +33,7 @@ const initApiRoutes = (app) => {
     initApiEmail(app);
     initApiComment(app);
     initApiFeedback(app);
+    initApiTest(app);
 };
 
 export default initApiRoutes;
