@@ -3,7 +3,7 @@ import returnErrService from "../helps/returnErrService.mjs";
 import { handleRemoveMatch } from "../middleware/removeImage.mjs";
 import db from "../models/index.mjs";
 import * as matchTeamService from "./matchTeamService.mjs";
-const { Op } = require("sequelize");
+import { Op } from "sequelize";
 
 const handleCheckExits = async (info) => {
     let match = await db.Match.findOne({
