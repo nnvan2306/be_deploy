@@ -1,4 +1,4 @@
-import jwtAction from "../middleware/jwtAction.mjs";
+import * as jwtAction from "../middleware/jwtAction.mjs";
 import teamController from "../controller/teamController.mjs";
 import { upload } from "../middleware/multer.mjs";
 import express from "express";

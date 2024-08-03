@@ -1,4 +1,4 @@
-import jwtAction from "../middleware/jwtAction.mjs";
+import * as jwtAction from "../middleware/jwtAction.mjs";
 import seasonController from "../controller/seasonController.mjs";
 import express from "express";
 

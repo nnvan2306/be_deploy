@@ -1,5 +1,5 @@
 import userController from "../controller/userController.mjs";
-import jwtAction from "../middleware/jwtAction.mjs";
+import * as jwtAction from "../middleware/jwtAction.mjs";
 import { uploadAvatarUser } from "../middleware/multer.mjs";
 import express from "express";
 
