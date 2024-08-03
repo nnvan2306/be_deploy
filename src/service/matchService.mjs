@@ -2,7 +2,7 @@ import funcReturn from "../helps/funcReturn.mjs";
 import returnErrService from "../helps/returnErrService.mjs";
 import { handleRemoveMatch } from "../middleware/removeImage.mjs";
 import db from "../models/index.mjs";
-import matchTeamService from "./matchTeamService.mjs";
+import * as matchTeamService from "./matchTeamService.mjs";
 const { Op } = require("sequelize");
 
 const handleCheckExits = async (info) => {
