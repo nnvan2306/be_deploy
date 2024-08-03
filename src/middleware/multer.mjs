@@ -1,5 +1,6 @@
-const multer = require("multer");
-require("dotenv").config();
+import multer from "multer";
+import dotenv from "dotenv";
+dotenv.config();
 
 // Cấu hình Multer
 const storage = multer.diskStorage({

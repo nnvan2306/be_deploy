@@ -6,7 +6,7 @@ export const handleRemoveLogo = async (path) => {
             await fs.unlink(`./src/public/logoTeams/${path}`);
             return true;
         } catch (err) {
-            console.error(err);
+            console.log(err);
             return false;
         }
     } else {
