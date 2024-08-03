@@ -1,7 +1,7 @@
 import funcReturn from "../helps/funcReturn.mjs";
 import returnErrService from "../helps/returnErrService.mjs";
 import returnInfoEmpty from "../helps/returnInfoEmpty.mjs";
-import emailService from "../service/emailService.mjs";
+import * as emailService from "../service/emailService.mjs";
 
 class emailController {
     async handleSendEmail(req, res) {

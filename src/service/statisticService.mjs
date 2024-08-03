@@ -127,7 +127,7 @@ const getStatisticSeasonService = async (seasonId) => {
     }
 };
 
-module.exports = {
+exports = {
     createStatisticService,
     deleteStatisticService,
     getStatisticPlayerService,

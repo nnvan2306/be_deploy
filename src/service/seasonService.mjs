@@ -96,7 +96,7 @@ const updateSeasonService = async (data) => {
     }
 };
 
-module.exports = {
+exports = {
     createSeasonService,
     getAllSeasonsService,
     getSeasonLimitService,

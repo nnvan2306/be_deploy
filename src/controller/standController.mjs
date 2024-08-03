@@ -1,7 +1,7 @@
 import funcReturn from "../helps/funcReturn.mjs";
 import returnErrService from "../helps/returnErrService.mjs";
 import returnInfoEmpty from "../helps/returnInfoEmpty.mjs";
-import standService from "../service/standService.mjs";
+import * as standService from "../service/standService.mjs";
 
 class standController {
     async handleCreateStand(req, res) {

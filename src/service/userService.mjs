@@ -8,8 +8,8 @@ import {
 import returnErrService from "../helps/returnErrService.mjs";
 import funcReturn from "../helps/funcReturn.mjs";
 import { handleRemoveUserAvatar } from "../middleware/removeImage.mjs";
-
-require("dotenv").config();
+import dotenv from "dotenv";
+dotenv.config();
 
 const salt = bcrypt.genSaltSync(10);
 
@@ -236,7 +236,16 @@ const removeAvatarService = async (data) => {
     }
 };
 
-module.exports = {
+// module.exports = {
+//     registerService,
+//     loginService,
+//     refreshTokenService,
+//     updateUserService,
+//     updateAvatarService,
+//     removeAvatarService,
+// };
+
+export {
     registerService,
     loginService,
     refreshTokenService,

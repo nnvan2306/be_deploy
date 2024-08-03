@@ -1,7 +1,7 @@
 import funcReturn from "../helps/funcReturn.mjs";
 import returnErrService from "../helps/returnErrService.mjs";
 import returnInfoEmpty from "../helps/returnInfoEmpty.mjs";
-import feedbackService from "../service/feedbackService.mjs";
+import * as feedbackService from "../service/feedbackService.mjs";
 
 class feedbackController {
     async handleCreateFeedback(req, res) {

@@ -1,7 +1,7 @@
 import funcReturn from "../helps/funcReturn.mjs";
 import returnErrService from "../helps/returnErrService.mjs";
 import returnInfoEmpty from "../helps/returnInfoEmpty.mjs";
-import matchService from "../service/matchService.mjs";
+import * as matchService from "../service/matchService.mjs";
 
 class matchController {
     async handleCreateMatch(req, res) {

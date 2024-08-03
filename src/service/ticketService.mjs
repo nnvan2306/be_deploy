@@ -1,7 +1,6 @@
 import returnErrService from "../helps/returnErrService.mjs";
 import db from "../models/index.mjs";
 import funcReturn from "../helps/funcReturn.mjs";
-import { where } from "sequelize";
 
 const handleCheckExits = async (data) => {
     for (const item of data) {
@@ -181,7 +180,7 @@ const getOneTicketService = async (id) => {
     }
 };
 
-module.exports = {
+exports = {
     createTicketService,
     updateBookingTicketService,
     deleteTicketService,

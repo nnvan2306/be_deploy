@@ -1,7 +1,7 @@
 import funcReturn from "../helps/funcReturn.mjs";
 import returnErrService from "../helps/returnErrService.mjs";
 import returnInfoEmpty from "../helps/returnInfoEmpty.mjs";
-import playerService from "../service/playerService.mjs";
+import * as playerService from "../service/playerService.mjs";
 
 class playerController {
     async handleCreatePlayer(req, res) {

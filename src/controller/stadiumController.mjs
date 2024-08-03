@@ -1,7 +1,7 @@
 import funcReturn from "../helps/funcReturn.mjs";
 import returnErrService from "../helps/returnErrService.mjs";
 import returnInfoEmpty from "../helps/returnInfoEmpty.mjs";
-import stadiumService from "../service/stadiumService.mjs";
+import * as stadiumService from "../service/stadiumService.mjs";
 
 class stadiumController {
     async handleCreateStadium(req, res) {

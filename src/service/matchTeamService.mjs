@@ -34,7 +34,7 @@ const updateMatchTeamService = async (matchId, idOld, idNew) => {
     }
 };
 
-module.exports = {
+exports = {
     createMatchTeamService,
     updateMatchTeamService,
 };

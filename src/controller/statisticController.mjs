@@ -1,7 +1,7 @@
 import funcReturn from "../helps/funcReturn.mjs";
 import returnErrService from "../helps/returnErrService.mjs";
 import returnInfoEmpty from "../helps/returnInfoEmpty.mjs";
-import statisticService from "../service/statisticService.mjs";
+import * as statisticService from "../service/statisticService.mjs";
 
 class statisticController {
     async handleGetStatisticPlayer(req, res) {

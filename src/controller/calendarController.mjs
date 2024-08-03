@@ -1,7 +1,7 @@
 import funcReturn from "../helps/funcReturn.mjs";
 import returnErrService from "../helps/returnErrService.mjs";
 import returnInfoEmpty from "../helps/returnInfoEmpty.mjs";
-import calendarService from "../service/calendarService.mjs";
+import * as calendarService from "../service/calendarService.mjs";
 
 class calendarController {
     async handleCreateCalendar(req, res) {

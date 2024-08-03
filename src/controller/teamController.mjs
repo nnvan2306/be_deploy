@@ -1,6 +1,6 @@
 import returnErrService from "../helps/returnErrService.mjs";
 import returnInfoEmpty from "../helps/returnInfoEmpty.mjs";
-import teamService from "../service/teamService.mjs";
+import * as teamService from "../service/teamService.mjs";
 
 class teamController {
     async handleCreateTeam(req, res) {

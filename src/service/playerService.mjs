@@ -212,7 +212,7 @@ const getPlayerDetailSeason = async (hostId, guestId) => {
     }
 };
 
-module.exports = {
+exports = {
     createPlayerService,
     deletePlayerService,
     getAllPlayerService,

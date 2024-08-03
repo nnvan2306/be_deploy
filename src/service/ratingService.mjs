@@ -153,7 +153,7 @@ const handleUpdateRatingService = async (data) => {
     }
 };
 
-module.exports = {
+exports = {
     createRatingService,
     handleGetAllRatingService,
     handleGetRatingSeasonService,
