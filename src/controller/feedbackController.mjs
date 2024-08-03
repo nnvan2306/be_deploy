@@ -109,4 +109,4 @@ class feedbackController {
     }
 }
 
-module.exports = new feedbackController();
+export default new feedbackController();

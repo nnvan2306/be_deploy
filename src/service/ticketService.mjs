@@ -180,7 +180,7 @@ const getOneTicketService = async (id) => {
     }
 };
 
-exports = {
+export {
     createTicketService,
     updateBookingTicketService,
     deleteTicketService,

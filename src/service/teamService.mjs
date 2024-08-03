@@ -122,7 +122,7 @@ const updateTeamService = async (data) => {
     }
 };
 
-exports = {
+export {
     createTeamService,
     getAllTeamService,
     getTeamLimitService,

@@ -62,7 +62,7 @@ const handleDeleteDislikeCommentByCommentId = async (commentId) => {
     }
 };
 
-module.exports = {
+export {
     handleCreateDislikeComment,
     handleDeleteDislikeComment,
     handleGetDisLikeCommentService,

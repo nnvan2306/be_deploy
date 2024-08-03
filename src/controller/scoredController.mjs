@@ -82,4 +82,4 @@ class scoredController {
     }
 }
 
-module.exports = new scoredController();
+export default new scoredController();

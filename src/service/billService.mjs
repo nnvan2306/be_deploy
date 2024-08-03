@@ -126,7 +126,7 @@ const updateIsDeliveredService = async (uuid) => {
     }
 };
 
-module.exports = {
+export {
     createBillService,
     deleteBillService,
     getAllBillService,

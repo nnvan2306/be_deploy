@@ -108,7 +108,7 @@ const updateStandService = async (data) => {
     }
 };
 
-exports = {
+export {
     createStandService,
     deleteStandService,
     getStandService,

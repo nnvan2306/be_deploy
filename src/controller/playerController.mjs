@@ -211,4 +211,4 @@ class playerController {
     }
 }
 
-module.exports = new playerController();
+export default new playerController();

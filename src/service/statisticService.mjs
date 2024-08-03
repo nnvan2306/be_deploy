@@ -127,7 +127,7 @@ const getStatisticSeasonService = async (seasonId) => {
     }
 };
 
-exports = {
+export {
     createStatisticService,
     deleteStatisticService,
     getStatisticPlayerService,

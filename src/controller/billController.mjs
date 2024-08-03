@@ -121,4 +121,4 @@ class billController {
     }
 }
 
-module.exports = new billController();
+export default new billController();

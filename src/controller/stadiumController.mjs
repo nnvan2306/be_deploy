@@ -106,4 +106,4 @@ class stadiumController {
     }
 }
 
-module.exports = new stadiumController();
+export default new stadiumController();

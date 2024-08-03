@@ -102,7 +102,7 @@ const updateStadiumService = async (data) => {
     }
 };
 
-exports = {
+export {
     createStadiumService,
     getStadiumService,
     deleteStadiumService,

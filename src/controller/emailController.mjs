@@ -22,4 +22,4 @@ class emailController {
     }
 }
 
-module.exports = new emailController();
+export default new emailController();

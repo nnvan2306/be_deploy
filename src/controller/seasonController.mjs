@@ -87,4 +87,4 @@ class seasonController {
     }
 }
 
-module.exports = new seasonController();
+export default new seasonController();

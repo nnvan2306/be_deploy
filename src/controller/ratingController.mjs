@@ -99,4 +99,4 @@ class ratingController {
     }
 }
 
-module.exports = new ratingController();
+export default new ratingController();

@@ -132,4 +132,4 @@ class calendarController {
         }
     }
 }
-module.exports = new calendarController();
+export default new calendarController();

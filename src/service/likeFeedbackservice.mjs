@@ -62,7 +62,7 @@ const handleDeleteLikeFeedbackById = async (feedbackId) => {
     }
 };
 
-module.exports = {
+export {
     handleGetLikeFeedbackService,
     handleCreateLikeFeedback,
     handleDeleteLikeFeedback,

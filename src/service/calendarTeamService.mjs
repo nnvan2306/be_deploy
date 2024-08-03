@@ -80,7 +80,7 @@ const updateCalendarTeamService = async (
         return returnErrService();
     }
 };
-module.exports = {
+export {
     createCalendarTeamService,
     deleteCalendarTeamService,
     updateCalendarTeamService,

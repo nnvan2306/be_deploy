@@ -136,4 +136,4 @@ class commentController {
     }
 }
 
-module.exports = new commentController();
+export default new commentController();

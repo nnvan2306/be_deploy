@@ -232,7 +232,7 @@ const getNearestCalendarService = async () => {
     }
 };
 
-module.exports = {
+export {
     crateCalendarService,
     getCalendarService,
     deleteCalendarService,

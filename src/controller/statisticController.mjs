@@ -115,4 +115,4 @@ class statisticController {
     }
 }
 
-module.exports = new statisticController();
+export default new statisticController();

@@ -181,4 +181,4 @@ class matchController {
     }
 }
 
-module.exports = new matchController();
+export default new matchController();

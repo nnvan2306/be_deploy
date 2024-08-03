@@ -127,4 +127,4 @@ class teamController {
     async handleSearchTeam(req, res) {}
 }
 
-module.exports = new teamController();
+export default new teamController();

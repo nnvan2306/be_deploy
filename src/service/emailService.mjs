@@ -37,4 +37,4 @@ const sendEmailService = async (email) => {
     }
 };
 
-module.exports = { sendEmailService };
+export { sendEmailService };

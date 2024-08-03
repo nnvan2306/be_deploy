@@ -262,7 +262,7 @@ export const deleteFeedbackByCommentId = async (commentId) => {
     }
 };
 
-module.exports = {
+export {
     createFeedbackService,
     getAllFeedbackService,
     getLimitFeedbackService,

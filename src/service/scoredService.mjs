@@ -75,7 +75,7 @@ const updateScoredService = async (data) => {
         return returnErrService();
     }
 };
-exports = {
+export {
     getScoredService,
     deleteScoredService,
     createScoredService,

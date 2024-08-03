@@ -21,4 +21,5 @@ const initApiUser = (app) => {
 
     return app.use("/v1", router);
 };
+
 export default initApiUser;

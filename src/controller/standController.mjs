@@ -93,4 +93,4 @@ class standController {
     }
 }
 
-module.exports = new standController();
+export default new standController();

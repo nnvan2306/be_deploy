@@ -62,7 +62,7 @@ const handleDeleteDislikeFeedbackById = async (feedbackId) => {
     }
 };
 
-module.exports = {
+export {
     handleGetDisLikeFeedbackService,
     handleCreateDislikeFeedback,
     handleDeleteDislikeFeedback,

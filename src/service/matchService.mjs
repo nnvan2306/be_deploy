@@ -388,7 +388,7 @@ const getMatchByIdService = async (id) => {
     }
 };
 
-module.exports = {
+export {
     getMatchDetailSeasonService,
     getAllMatchService,
     createMatchService,

@@ -285,7 +285,7 @@ const deleteCommentService = async (data, type = "ref") => {
     }
 };
 
-module.exports = {
+export {
     createCommentService,
     getAllCommentService,
     getLimitCommentService,

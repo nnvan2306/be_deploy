@@ -165,4 +165,4 @@ class TicketController {
     }
 }
 
-module.exports = new TicketController();
+export default new TicketController();
