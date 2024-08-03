@@ -1,7 +1,6 @@
 import funcReturn from "../helps/funcReturn.mjs";
 import returnErrService from "../helps/returnErrService.mjs";
 import returnInfoEmpty from "../helps/returnInfoEmpty.mjs";
-import stand from "../models/stand";
 import standService from "../service/standService.mjs";
 
 class standController {
