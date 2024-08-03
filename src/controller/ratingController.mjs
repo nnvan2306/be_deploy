@@ -1,7 +1,7 @@
 import funcReturn from "../helps/funcReturn.mjs";
 import returnErrService from "../helps/returnErrService.mjs";
 import returnInfoEmpty from "../helps/returnInfoEmpty.mjs";
-import ratingService from "../service/ratingService";
+import ratingService from "../service/ratingService.mjs";
 
 class ratingController {
     async handleCreateRating(req, res) {
