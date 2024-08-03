@@ -9,7 +9,7 @@ const handleValidateEmail = (email) => {
     return validate.test(email);
 };
 
-class userController {
+class UserController {
     async handleRegister(req, res) {
         const user = req.body;
         try {
@@ -226,4 +226,4 @@ class userController {
     }
 }
 
-export default new userController();
+export default new UserController();
