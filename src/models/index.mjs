@@ -51,8 +51,6 @@ const loadModels = async () => {
     db.Sequelize = Sequelize;
 };
 
-console.log("db >>>>", db);
-
 await loadModels();
 
 export default db;
