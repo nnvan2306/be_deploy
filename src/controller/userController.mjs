@@ -75,10 +75,12 @@ class UserController {
                 await res.cookie("access_token", login.data.access_token, {
                     maxAge: 3 * 1000,
                     httpOnly: true,
+                    sameSite: "None",
                 });
                 await res.cookie("refresh_token", login.data.refresh_token, {
                     maxAge: 365 * 24 * 60 * 60 * 1000,
                     httpOnly: true,
+                    sameSite: "None",
                 });
             }
             return res
