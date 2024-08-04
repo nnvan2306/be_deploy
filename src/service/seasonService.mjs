@@ -1,4 +1,4 @@
-import db from "../models/index.mjs";
+import * as db from "../models/index.mjs";
 import returnErrService from "../helps/returnErrService.mjs";
 import funcReturn from "../helps/funcReturn.mjs";
 
