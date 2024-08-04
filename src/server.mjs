@@ -23,6 +23,9 @@ const PORT = process.env.PORT || 8081;
 // config cors
 configCors(app);
 
+//config cookie-parser
+app.use(cookieParser());
+
 //connect socket
 const io = new SocketIO(http, {
     cors: {
@@ -45,9 +48,6 @@ try {
 } catch (error) {
     console.log(error);
 }
-
-//config cookie-parser
-app.use(cookieParser());
 
 //public /images
 app.use("/v1/images", express.static(__dirname + "/public/logoTeams"));
