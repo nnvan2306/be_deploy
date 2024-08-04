@@ -30,7 +30,7 @@ const loadModels = async () => {
         return (
             file.indexOf(".") !== 0 &&
             file !== basename &&
-            file.slice(-3) === ".js" &&
+            (file.slice(-3) === ".js" || file.slice(-4) === ".mjs") &&
             file.indexOf(".test.js") === -1
         );
     });
@@ -50,6 +50,8 @@ const loadModels = async () => {
     db.sequelize = sequelize;
     db.Sequelize = Sequelize;
 };
+
+console.log("db >>>>", db);
 
 await loadModels();
 
