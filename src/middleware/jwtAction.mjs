@@ -5,13 +5,13 @@ import { arrPath } from "../helps/listPathNotCheck.mjs";
 import dotenv from "dotenv";
 dotenv.config();
 
-export const createJwtAccess = (payload) => {
+export const createJwtAccess = async (payload) => {
     let key = process.env.JWT_SECRET;
     let token = jwt.sign(payload, key);
     return token;
 };
 
-export const createJwtRefresh = (payload) => {
+export const createJwtRefresh = async (payload) => {
     let key = process.env.JWT_SERECT_REFRESH;
     let token = jwt.sign(payload, key);
     return token;
