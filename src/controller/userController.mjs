@@ -71,6 +71,7 @@ class UserController {
             let login = await userService.loginService(user);
 
             if (login.errorCode === 0) {
+                console.log("login>>>>", login);
                 await res.cookie("access_token", login.data.access_token, {
                     maxAge: 3 * 1000,
                     httpOnly: true,

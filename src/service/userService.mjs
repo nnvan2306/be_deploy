@@ -85,9 +85,6 @@ const loginService = async (data) => {
         let access_token = await createJwtAccess(payloadAccess);
         let refresh_token = await createJwtRefresh(playloadRefresh);
 
-        console.log("Access token:>>>> ", access_token);
-        console.log("Refresh token:>>>> ", refresh_token);
-
         return funcReturn("login successfully", 0, {
             access_token: access_token,
             refresh_token: refresh_token,
