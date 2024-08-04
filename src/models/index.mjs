@@ -36,8 +36,9 @@ const loadModels = async () => {
     });
 
     for (const file of files) {
-        const { default: model } = await import(path.join(__dirname, file));
-        db[model.name] = model(sequelize, Sequelize.DataTypes);
+        const { default: initModel } = await import(path.join(__dirname, file));
+        const model = initModel(sequelize);
+        db[model.name] = model;
     }
 
     Object.keys(db).forEach((modelName) => {

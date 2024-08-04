@@ -1,24 +1,23 @@
-"use strict";
-import { Model } from "sequelize";
+import { Model, DataTypes } from "sequelize";
 
-module.exports = (sequelize, DataTypes) => {
-    class Calendar extends Model {
-        /**
-         * Helper method for defining associations.
-         * This method is not a part of Sequelize lifecycle.
-         * The `models/index` file will call this method automatically.
-         */
-        static associate(models) {
-            // define association here
-            Calendar.hasMany(models.Ticket);
-            Calendar.belongsTo(models.Stadium);
-            Calendar.belongsToMany(models.Team, {
-                through: "Calendar_Team",
-                foreignKey: "calendarId",
-            });
-        }
+class Calendar extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+        // define association here
+        Calendar.hasMany(models.Ticket);
+        Calendar.belongsTo(models.Stadium);
+        Calendar.belongsToMany(models.Team, {
+            through: "Calendar_Team",
+            foreignKey: "calendarId",
+        });
     }
+}
 
+const initCalendar = (sequelize) => {
     Calendar.init(
         {
             hostId: DataTypes.INTEGER,
@@ -32,5 +31,8 @@ module.exports = (sequelize, DataTypes) => {
             modelName: "Calendar",
         }
     );
+
     return Calendar;
 };
+
+export default initCalendar;

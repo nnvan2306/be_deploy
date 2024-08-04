@@ -1,24 +1,24 @@
-"use strict";
-const { Model, INTEGER } = require("sequelize");
-module.exports = (sequelize, DataTypes) => {
-    class Match extends Model {
-        /**
-         * Helper method for defining associations.
-         * This method is not a part of Sequelize lifecycle.
-         * The `models/index` file will call this method automatically.
-         */
-        static associate(models) {
-            // define association here
-            Match.belongsToMany(models.Team, {
-                through: "Match_Team",
-                foreignKey: "matchId",
-            });
-            Match.hasMany(models.Scored);
-            Match.belongsTo(models.Season);
-            Match.hasMany(models.Comment);
-        }
-    }
+import { Model, DataTypes } from "sequelize";
 
+class Match extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+        // Define associations here
+        Match.belongsToMany(models.Team, {
+            through: "Match_Team",
+            foreignKey: "matchId",
+        });
+        Match.hasMany(models.Scored);
+        Match.belongsTo(models.Season);
+        Match.hasMany(models.Comment);
+    }
+}
+
+const initMatch = (sequelize) => {
     Match.init(
         {
             title: DataTypes.STRING,
@@ -49,5 +49,8 @@ module.exports = (sequelize, DataTypes) => {
             modelName: "Match",
         }
     );
+
     return Match;
 };
+
+export default initMatch;

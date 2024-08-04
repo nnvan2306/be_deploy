@@ -1,18 +1,19 @@
-"use strict";
-const { Model } = require("sequelize");
-module.exports = (sequelize, DataTypes) => {
-    class Statistic extends Model {
-        /**
-         * Helper method for defining associations.
-         * This method is not a part of Sequelize lifecycle.
-         * The `models/index` file will call this method automatically.
-         */
-        static associate(models) {
-            // define association here
-            Statistic.belongsTo(models.Player);
-            Statistic.belongsTo(models.Season);
-        }
+import { Model, DataTypes } from "sequelize";
+
+class Statistic extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+        // Define associations here
+        Statistic.belongsTo(models.Player);
+        Statistic.belongsTo(models.Season);
     }
+}
+
+const initStatistic = (sequelize) => {
     Statistic.init(
         {
             goal: DataTypes.INTEGER,
@@ -29,5 +30,8 @@ module.exports = (sequelize, DataTypes) => {
             modelName: "Statistic",
         }
     );
+
     return Statistic;
 };
+
+export default initStatistic;
