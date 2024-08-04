@@ -1,6 +1,7 @@
 import db from "../models/index.mjs";
 import returnErrService from "../helps/returnErrService.mjs";
 import funcReturn from "../helps/funcReturn.mjs";
+import initSeason from "../models/season.mjs";
 
 const checkSeasonExitService = async (index) => {
     let check = await db.Season.findOne({
@@ -32,8 +33,7 @@ const createSeasonService = async (data) => {
 
 const getAllSeasonsService = async () => {
     try {
-        console.log("db>>>>", db);
-        let seasons = await db.Season.findAll();
+        let seasons = await initSeason.findAll();
         return funcReturn("all seasons", 0, seasons);
     } catch (err) {
         console.log(err);
