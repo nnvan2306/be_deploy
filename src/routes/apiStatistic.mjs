@@ -7,7 +7,7 @@ const router = express.Router();
 const initApiStatistic = (app) => {
     router.post(
         "/create-statistic",
-        jwtAction.handleCheckToken,
+        // jwtAction.handleCheckToken,
         statisticController.handleCreateStatistic
     );
     router.get(
@@ -16,12 +16,12 @@ const initApiStatistic = (app) => {
     );
     router.put(
         "/update-statistic",
-        jwtAction.handleCheckToken,
+        // jwtAction.handleCheckToken,
         statisticController.handleUpdateStatistic
     );
     router.delete(
         "/delete-statistic",
-        jwtAction.handleCheckToken,
+        // jwtAction.handleCheckToken,
         statisticController.deleteStatistic
     );
     router.get(

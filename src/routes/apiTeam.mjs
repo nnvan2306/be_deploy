@@ -8,25 +8,25 @@ const router = express.Router();
 const initApiTeam = (app) => {
     router.post(
         "/create-team",
-        jwtAction.handleCheckToken,
+        // jwtAction.handleCheckToken,
         upload.single("file"),
         teamController.handleCreateTeam
     );
     router.get("/get-team", teamController.handleGetTeam);
     router.delete(
         "/delete-team",
-        jwtAction.handleCheckToken,
+        // jwtAction.handleCheckToken,
         teamController.handleDeleteTeam
     );
     router.put(
         "/update-team",
-        jwtAction.handleCheckToken,
+        // jwtAction.handleCheckToken,
         upload.single("file"),
         teamController.handleUpdateTeam
     );
     router.post(
         "/search-team",
-        jwtAction.handleCheckToken,
+        // jwtAction.handleCheckToken,
         teamController.handleSearchTeam
     );
 

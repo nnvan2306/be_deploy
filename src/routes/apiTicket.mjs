@@ -7,12 +7,12 @@ const router = express.Router();
 const initApiTicket = (app) => {
     router.post(
         "/create-ticket",
-        jwtAction.handleCheckToken,
+        // jwtAction.handleCheckToken,
         ticketController.handleCreateTicket
     );
     router.put(
         "/update-ticket",
-        jwtAction.handleCheckToken,
+        // jwtAction.handleCheckToken,
         ticketController.handleUpdateTicket
     );
     router.patch(
@@ -21,12 +21,12 @@ const initApiTicket = (app) => {
     );
     router.delete(
         "/delete-ticket",
-        jwtAction.handleCheckToken,
+        // jwtAction.handleCheckToken,
         ticketController.handleDeleteTicket
     );
     router.delete(
         "/delete-all-ticket",
-        jwtAction.handleCheckToken,
+        // jwtAction.handleCheckToken,
         ticketController.handleDeleteAllTicket
     );
     router.get("/get-ticket", ticketController.handleGetTicket);

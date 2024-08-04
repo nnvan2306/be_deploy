@@ -8,19 +8,19 @@ const router = express.Router();
 const initApiMatch = (app) => {
     router.post(
         "/create-match",
-        jwtAction.handleCheckToken,
+        // jwtAction.handleCheckToken,
         uploadMatch.single("file"),
         matchController.handleCreateMatch
     );
     router.get("/get-match", matchController.handleGetMatch);
     router.delete(
         "/delete-match",
-        jwtAction.handleCheckToken,
+        // jwtAction.handleCheckToken,
         matchController.handleDeleteMatch
     );
     router.put(
         "/update-match",
-        jwtAction.handleCheckToken,
+        // jwtAction.handleCheckToken,
         uploadMatch.single("file"),
         matchController.handleUpdateMatch
     );

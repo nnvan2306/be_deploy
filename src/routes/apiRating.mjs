@@ -7,18 +7,18 @@ const router = express.Router();
 const initApiRating = (app) => {
     router.post(
         "/create-rating",
-        jwtAction.handleCheckToken,
+        // jwtAction.handleCheckToken,
         ratingController.handleCreateRating
     );
     router.get("/get-rating", ratingController.handleGetRating);
     router.delete(
         "/delete-rating",
-        jwtAction.handleCheckToken,
+        // jwtAction.handleCheckToken,
         ratingController.handleDeleteRating
     );
     router.put(
         "/update-rating",
-        jwtAction.handleCheckToken,
+        // jwtAction.handleCheckToken,
         ratingController.handleUpdateRating
     );
 

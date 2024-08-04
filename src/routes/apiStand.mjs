@@ -7,18 +7,18 @@ const router = express.Router();
 const initApiStand = (app) => {
     router.post(
         "/create-stand",
-        jwtAction.handleCheckToken,
+        // jwtAction.handleCheckToken,
         standController.handleCreateStand
     );
     router.delete(
         "/delete-stand",
-        jwtAction.handleCheckToken,
+        // jwtAction.handleCheckToken,s
         standController.handleDeleteStand
     );
     router.get("/get-stand", standController.handleGetStand);
     router.put(
         "/update-stand",
-        jwtAction.handleCheckToken,
+        // jwtAction.handleCheckToken,
         standController.handleUpdateStand
     );
     return app.use("/v1", router);

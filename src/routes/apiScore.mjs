@@ -8,17 +8,17 @@ const initApiScore = (app) => {
     router.get("/get-scored", scoredController.handleGetScored);
     router.delete(
         "/delete-scored",
-        jwtAction.handleCheckToken,
+        // jwtAction.handleCheckToken,
         scoredController.handleDeleteScored
     );
     router.post(
         "/create-scored",
-        jwtAction.handleCheckToken,
+        // jwtAction.handleCheckToken,
         scoredController.handleCreateScored
     );
     router.put(
         "/update-scored",
-        jwtAction.handleCheckToken,
+        // jwtAction.handleCheckToken,
         scoredController.handleUpdateScored
     );
 

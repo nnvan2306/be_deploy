@@ -10,7 +10,7 @@ const initApiBill = (app) => {
     router.get("/get-bill", billController.handleGetBill);
     router.patch(
         "/update-active-bill",
-        jwtAction.handleCheckToken,
+        // jwtAction.handleCheckToken,
         billController.handleUpdateActiveBill
     );
 

@@ -7,18 +7,18 @@ const router = express.Router();
 const initApiCalendar = (app) => {
     router.post(
         "/create-calendar",
-        jwtAction.handleCheckToken,
+        // jwtAction.handleCheckToken,
         calendarController.handleCreateCalendar
     );
     router.get("/get-calender", calendarController.handleGetCalendar);
     router.delete(
         "/delete-calendar",
-        jwtAction.handleCheckToken,
+        // jwtAction.handleCheckToken,
         calendarController.handleDeleteCalendar
     );
     router.put(
         "/update-calendar",
-        jwtAction.handleCheckToken,
+        // jwtAction.handleCheckToken,
         calendarController.handleUpdateCalendar
     );
     router.get(
