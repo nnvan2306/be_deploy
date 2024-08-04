@@ -3,7 +3,6 @@ import returnErrService from "../helps/returnErrService.mjs";
 import { handleRemoveAvatar } from "../middleware/removeImage.mjs";
 import db from "../models/index.mjs";
 import funcReturn from "../helps/funcReturn.mjs";
-// const { Op } = require("sequelize");
 
 const handleCheckExits = async (code) => {
     let player = await db.Player.findOne({
