@@ -3,9 +3,16 @@ import returnErrService from "../helps/returnErrService.mjs";
 import { handleRemoveLogo } from "../middleware/removeImage.mjs";
 import funcReturn from "../helps/funcReturn.mjs";
 
-const checkTeamExits = async (code) => {
+const checkTeamExits = async (name) => {
     let check = await db.Team.findOne({
-        where: { code: code },
+        where: { name: name },
+    });
+    return check;
+};
+
+const handleCheckById = async (id) => {
+    let check = await db.Team.findOne({
+        where: { id: id },
     });
     return check;
 };
@@ -13,13 +20,12 @@ const checkTeamExits = async (code) => {
 const createTeamService = async (data) => {
     try {
         // check exits
-        let checkExits = await checkTeamExits(data.code);
+        let checkExits = await checkTeamExits(data.name);
         if (checkExits) {
             return funcReturn("team is exits", 1, []);
         }
         // create
         await db.Team.create({
-            code: data.code,
             name: data.name,
             logo_url: `/images/${data.logo_url}`,
             description: data.description,
@@ -66,13 +72,13 @@ const getTeamLimitService = async (page, pageSize) => {
     }
 };
 
-const deleteTeamService = async (code) => {
+const deleteTeamService = async (id) => {
     try {
-        let team = await checkTeamExits(code);
+        let team = await handleCheckById(id);
         let path = team?.dataValues?.logo_url.split("/images/")[1];
         if (handleRemoveLogo(path)) {
             await db.Team.destroy({
-                where: { code: code },
+                where: { id: id },
             });
             return funcReturn("delete team successfully", 0, []);
         } else {
@@ -89,7 +95,6 @@ const updateTeamService = async (data) => {
         if (!data.isChangeFile) {
             await db.Team.update(
                 {
-                    code: data.code,
                     name: data.name,
                     description: data.description,
                     des_text: data.des_text,
@@ -103,7 +108,6 @@ const updateTeamService = async (data) => {
             if (handleRemoveLogo(path)) {
                 await db.Team.update(
                     {
-                        code: data.code,
                         name: data.name,
                         description: data.description,
                         des_text: data.des_text,

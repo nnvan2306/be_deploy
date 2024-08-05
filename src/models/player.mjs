@@ -17,7 +17,7 @@ const initPlayer = (sequelize) => {
     Player.init(
         {
             name: DataTypes.STRING,
-            code: DataTypes.INTEGER,
+            // code: DataTypes.INTEGER,
             location: DataTypes.INTEGER,
             avatar_url: DataTypes.STRING,
             nationality: DataTypes.STRING,

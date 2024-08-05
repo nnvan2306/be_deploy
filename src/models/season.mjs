@@ -18,7 +18,7 @@ class Season extends Model {
 const initSeason = (sequelize) => {
     Season.init(
         {
-            index: DataTypes.INTEGER,
+            // index: DataTypes.INTEGER,
             name: DataTypes.STRING,
             description: DataTypes.STRING,
             des_text: DataTypes.STRING,

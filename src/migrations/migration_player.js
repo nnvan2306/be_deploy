@@ -14,9 +14,9 @@ module.exports = {
                 name: {
                     type: Sequelize.STRING,
                 },
-                code: {
-                    type: Sequelize.INTEGER,
-                },
+                // code: {
+                //     type: Sequelize.INTEGER,
+                // },
                 location: { type: Sequelize.INTEGER },
                 avatar_url: {
                     type: Sequelize.STRING,

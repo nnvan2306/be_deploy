@@ -4,22 +4,16 @@ import { handleRemoveAvatar } from "../middleware/removeImage.mjs";
 import db from "../models/index.mjs";
 import funcReturn from "../helps/funcReturn.mjs";
 
-const handleCheckExits = async (code) => {
+const handleCheckExits = async (id) => {
     let player = await db.Player.findOne({
-        where: { code: code },
+        where: { id: id },
     });
     return player;
 };
 
 const createPlayerService = async (data) => {
     try {
-        let check = await handleCheckExits(data.code);
-        if (check) {
-            return funcReturn("player is exits", 1, []);
-        }
-
         await db.Player.create({
-            code: data?.code,
             name: data?.name,
             nationality: data?.nationality,
             height: data?.height,
@@ -72,13 +66,13 @@ const getLimitPlayerService = async (page, pageSize) => {
     }
 };
 
-const deletePlayerService = async (code) => {
+const deletePlayerService = async (id) => {
     try {
-        let check = await handleCheckExits(code);
+        let check = await handleCheckExits(id);
         let path = check.avatar_url.split("/images/")[1];
         if (handleRemoveAvatar(path)) {
             await db.Player.destroy({
-                where: { code: code },
+                where: { id: id },
             });
 
             return funcReturn("delete player successfully", 0, []);
@@ -94,7 +88,6 @@ const updatePlayerService = async (data) => {
         if (!data.isChangeFile) {
             await db.Player.update(
                 {
-                    code: data.code,
                     name: data.name,
                     description: data.description,
                     des_text: data.des_text,
@@ -120,7 +113,6 @@ const updatePlayerService = async (data) => {
 
         await db.Player.update(
             {
-                code: data.code,
                 name: data.name,
                 description: data.description,
                 des_text: data.des_text,
@@ -145,18 +137,9 @@ const updatePlayerService = async (data) => {
 
 const searchPlayerService = async (textSearch) => {
     try {
-        let checkType = textSearch / 1;
-        let players;
-
-        if (checkType) {
-            players = await db.Player.findAll({
-                where: { code: { [Op.like]: "%" + textSearch + "%" } },
-            });
-        } else {
-            players = await db.Player.findAll({
-                where: { name: { [Op.like]: "%" + textSearch + "%" } },
-            });
-        }
+        let players = await db.Player.findAll({
+            where: { name: { [Op.like]: "%" + textSearch + "%" } },
+        });
 
         return funcReturn("players", 0, players);
     } catch (err) {

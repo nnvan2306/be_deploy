@@ -25,7 +25,7 @@ class Team extends Model {
 const initTeam = (sequelize) => {
     Team.init(
         {
-            code: DataTypes.INTEGER,
+            // code: DataTypes.INTEGER,
             name: DataTypes.STRING,
             logo_url: DataTypes.STRING,
             description: DataTypes.STRING,

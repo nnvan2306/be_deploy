@@ -9,12 +9,7 @@ class seasonController {
         try {
             //validate
 
-            if (
-                !season.index ||
-                !season.name ||
-                !season.description ||
-                !season.des_text
-            ) {
+            if (!season.name || !season.description || !season.des_text) {
                 return res.status(400).json(returnInfoEmpty());
             }
 
@@ -62,9 +57,7 @@ class seasonController {
 
     async handleDeleteSeason(req, res) {
         try {
-            let fetch = await seasonService.deleteSeasonService(
-                req.query.index
-            );
+            let fetch = await seasonService.deleteSeasonService(req.query.id);
             return res
                 .status(fetch.errorCode === 0 ? 200 : 500)
                 .json(funcReturn(fetch.message, fetch.errorCode, fetch.data));

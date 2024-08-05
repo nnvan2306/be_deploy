@@ -8,7 +8,6 @@ class teamController {
         try {
             //validate
             if (
-                !team.code ||
                 !team.name ||
                 !team.description ||
                 !team.des_text ||
@@ -18,7 +17,6 @@ class teamController {
             }
 
             let dataBuider = {
-                code: team.code,
                 name: team.name,
                 logo_url: req.file.filename,
                 description: team.description,
@@ -72,9 +70,9 @@ class teamController {
 
     async handleDeleteTeam(req, res) {
         try {
-            let code = req.query.code;
+            let id = req.query.id;
             if (code) {
-                let fetch = await teamService.deleteTeamService(code);
+                let fetch = await teamService.deleteTeamService(id);
                 return res.status(fetch.errorCode === 0 ? 200 : 500).json({
                     message: fetch.message,
                     errorCode: fetch.errorCode,
@@ -90,18 +88,11 @@ class teamController {
         const team = JSON.parse(JSON.stringify(req.body));
         try {
             //validate
-            if (
-                !team.id ||
-                !team.code ||
-                !team.name ||
-                !team.description ||
-                !team.des_text
-            ) {
+            if (!team.id || !team.name || !team.description || !team.des_text) {
                 return res.status(400).json(returnInfoEmpty());
             }
             let dataBuider = {
                 id: team.id,
-                code: team.code,
                 name: team.name,
                 logo_url: team.logo_url,
                 description: team.description,

@@ -9,7 +9,6 @@ class playerController {
         try {
             //validate
             if (
-                !player?.code ||
                 !player?.name ||
                 !player?.nationality ||
                 !player?.height ||
@@ -26,7 +25,6 @@ class playerController {
 
             let dataBuider = {
                 ...player,
-                code: +player?.code,
                 height: +player?.height,
                 weight: +player?.weight,
                 location: +player?.location,
@@ -83,7 +81,7 @@ class playerController {
 
     async handleDeletePlayer(req, res) {
         try {
-            let player = req.query.code;
+            let player = req.query.id;
             if (player) {
                 let fetch = await playerService.deletePlayerService(player);
                 return res.status(200).json({
@@ -103,7 +101,6 @@ class playerController {
         try {
             if (
                 !player.id ||
-                !player.code ||
                 !player.name ||
                 !player.description ||
                 !player.des_text ||
@@ -122,7 +119,6 @@ class playerController {
             let dataBuider = {
                 ...player,
                 player: +player.id,
-                code: +player?.code,
                 height: +player?.height,
                 weight: +player?.weight,
                 location: +player?.location,

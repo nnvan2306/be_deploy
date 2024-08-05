@@ -2,22 +2,21 @@ import db from "../models/index.mjs";
 import returnErrService from "../helps/returnErrService.mjs";
 import funcReturn from "../helps/funcReturn.mjs";
 
-const checkSeasonExitService = async (index) => {
+const checkSeasonExitService = async (name) => {
     let check = await db.Season.findOne({
-        where: { index: index },
+        where: { name: name },
     });
     return check;
 };
 
 const createSeasonService = async (data) => {
     try {
-        let checkExits = await checkSeasonExitService(data.index);
+        let checkExits = await checkSeasonExitService(data.name);
         if (checkExits) {
             return funcReturn("season is exits", 1, []);
         }
 
         await db.Season.create({
-            index: data.index,
             name: data.name,
             description: data.description,
             des_text: data.des_text,
@@ -64,10 +63,10 @@ const getSeasonLimitService = async (page, pageSize) => {
     }
 };
 
-const deleteSeasonService = async (index) => {
+const deleteSeasonService = async (id) => {
     try {
         await db.Season.destroy({
-            where: { index: index },
+            where: { id: id },
         });
         return funcReturn("delete season successfully", 0, []);
     } catch (err) {
@@ -80,7 +79,6 @@ const updateSeasonService = async (data) => {
     try {
         await db.Season.update(
             {
-                index: data.index,
                 name: data.name,
                 description: data.description,
                 des_text: data.des_text,

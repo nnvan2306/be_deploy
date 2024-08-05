@@ -11,9 +11,9 @@ module.exports = {
                     primaryKey: true,
                     type: Sequelize.INTEGER,
                 },
-                code: {
-                    type: Sequelize.INTEGER,
-                },
+                // code: {
+                //     type: Sequelize.INTEGER,
+                // },
                 name: {
                     type: Sequelize.STRING,
                 },
