@@ -27,6 +27,8 @@ const initFeedback = (sequelize) => {
         {
             sequelize,
             modelName: "Feedback",
+            charset: "utf8mb4",
+            collate: "utf8mb4_unicode_ci",
         }
     );
 

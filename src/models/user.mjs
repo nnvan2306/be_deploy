@@ -26,6 +26,8 @@ const initUser = (sequelize) => {
         {
             sequelize,
             modelName: "User",
+            charset: "utf8mb4",
+            collate: "utf8mb4_unicode_ci",
         }
     );
 

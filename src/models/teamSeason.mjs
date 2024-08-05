@@ -20,6 +20,8 @@ const initTeamSeason = (sequelize) => {
         {
             sequelize,
             modelName: "Team_Season",
+            charset: "utf8mb4",
+            collate: "utf8mb4_unicode_ci",
         }
     );
 

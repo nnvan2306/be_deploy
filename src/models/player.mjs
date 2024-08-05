@@ -32,6 +32,8 @@ const initPlayer = (sequelize) => {
         {
             sequelize,
             modelName: "Player",
+            charset: "utf8mb4",
+            collate: "utf8mb4_unicode_ci",
         }
     );
 

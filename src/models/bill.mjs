@@ -32,6 +32,8 @@ const initBill = (sequelize) => {
         {
             sequelize,
             modelName: "Bill",
+            charset: "utf8mb4",
+            collate: "utf8mb4_unicode_ci",
         }
     );
 

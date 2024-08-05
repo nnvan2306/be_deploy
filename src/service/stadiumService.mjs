@@ -71,7 +71,6 @@ const deleteStadiumService = async (id) => {
 
 const updateStadiumService = async (data) => {
     try {
-        console.log(data);
         if (!data.isChangeFile) {
             await db.Stadium.update(
                 {

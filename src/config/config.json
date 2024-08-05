@@ -6,20 +6,41 @@
     "host": "127.0.0.1",
     "dialect": "mysql",
     "logging":false,
-    "freezeTableName": true
+    "freezeTableName": true,
+    "dialectOptions": {
+      "charset": "utf8mb4"
+    },
+    "define": {
+      "charset": "utf8mb4",
+      "collate": "utf8mb4_unicode_ci"
+    }
   },
   "test": {
     "username": "root",
     "password": "password",
     "database": "nha",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "dialectOptions": {
+      "charset": "utf8mb4"
+    },
+    "define": {
+      "charset": "utf8mb4",
+      "collate": "utf8mb4_unicode_ci"
+    }
   },
   "production": {
     "username": "root",
     "password": "password",
     "database": "nha",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "dialectOptions": {
+      "charset": "utf8mb4"
+    },
+    "define": {
+      "charset": "utf8mb4",
+      "collate": "utf8mb4_unicode_ci"
+    }
   }
 }
