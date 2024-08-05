@@ -5,7 +5,6 @@ module.exports = {
             script: "./src/server.js",
             env: {
                 PORT: 8080,
-                // REACT_URL: "http://localhost:5173",
                 REACT_URL: "https://fe-nha-admin.vercel.app",
                 NEXT_URL: " http://localhost:3000",
                 JWT_SECRET: "ngongocvan",
