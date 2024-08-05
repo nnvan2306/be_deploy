@@ -5,7 +5,6 @@ module.exports = {
             script: "./src/server.js",
             env: {
                 PORT: 8080,
-                REACT_URL: "https://fe-nha-admin.vercel.app",
                 NEXT_URL: " http://localhost:3000",
                 JWT_SECRET: "ngongocvan",
                 JWT_SERECT_REFRESH: "vanngo",
@@ -15,6 +14,7 @@ module.exports = {
                 MAX_SIZE_MATCH: 1000 * 1000 * 1,
                 EMAIL_USENAME: "vanvanvan23062003@gmail.com",
                 EMAIL_PASSWORD: "lcpw wjba lggo ybyq",
+                REACT_URL: "https://fe-nha-admin.vercel.app",
             },
         },
     ],
