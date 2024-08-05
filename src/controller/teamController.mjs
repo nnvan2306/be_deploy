@@ -71,7 +71,7 @@ class teamController {
     async handleDeleteTeam(req, res) {
         try {
             let id = req.query.id;
-            if (code) {
+            if (id) {
                 let fetch = await teamService.deleteTeamService(id);
                 return res.status(fetch.errorCode === 0 ? 200 : 500).json({
                     message: fetch.message,
