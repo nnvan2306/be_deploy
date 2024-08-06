@@ -39,7 +39,6 @@ io.on("connect", (socket) => {
 });
 
 //config body parser
-app.use(bodyParser.json());
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
