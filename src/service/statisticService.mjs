@@ -7,10 +7,6 @@ const getStatisticPlayerService = async (id) => {
         console.log("id >>>>>", id, "type >>>>", typeof id);
         let player = await db.Statistic.findAll({
             where: { playerId: id },
-            // include: {
-            //     model: db.Season,
-            //     attributes: ["index", "name"],
-            // },
         });
 
         return funcReturn("ststistics player", 0, player);
