@@ -9,6 +9,7 @@ class Team extends Model {
     static associate(models) {
         // Define associations here
         Team.hasMany(models.Player);
+        Team.hasMany(models.Rating);
         Team.belongsToMany(models.Season, { through: "Team_Season" });
         Team.belongsToMany(models.Match, {
             through: "Match_Team",
@@ -16,10 +17,6 @@ class Team extends Model {
         });
         Team.belongsToMany(models.Calendar, {
             through: "Calendar_Team",
-            foreignKey: "teamId",
-        });
-        Team.belongsToMany(models.Season, {
-            through: "Rating",
             foreignKey: "teamId",
         });
     }

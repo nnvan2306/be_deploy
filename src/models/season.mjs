@@ -12,10 +12,6 @@ class Season extends Model {
         Season.hasMany(models.Rating);
         Season.hasMany(models.Match);
         Season.belongsToMany(models.Team, { through: "Team_Season" });
-        Season.belongsToMany(models.Team, {
-            through: "Rating",
-            foreignKey: "seasonId",
-        });
     }
 }
 
