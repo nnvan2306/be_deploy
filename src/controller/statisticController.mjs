@@ -8,7 +8,7 @@ class statisticController {
         try {
             if (req.query.id) {
                 let fetch = await statisticService.getStatisticPlayerService(
-                    req.query.id
+                    +req.query.id
                 );
 
                 return res
