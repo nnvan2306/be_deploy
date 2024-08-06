@@ -5,14 +5,14 @@ import funcReturn from "../helps/funcReturn.mjs";
 const getStatisticPlayerService = async (id) => {
     try {
         let player = await db.Statistic.findAll({
-            where: { playerId: id },
+            where: { playerId: +id },
             include: {
                 model: db.Season,
                 attributes: ["index", "name"],
             },
         });
 
-        return funcReturn("info player", 0, player);
+        return funcReturn("ststistics player", 0, player);
     } catch (err) {
         console.log(err);
         return returnErrService();
