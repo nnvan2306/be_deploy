@@ -76,6 +76,7 @@ const handleGetRatingSeasonService = async (seasonId) => {
             where: { seasonId: seasonId },
             include: {
                 model: db.Team,
+
                 include: [
                     {
                         model: db.Match,
