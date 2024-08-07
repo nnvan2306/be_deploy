@@ -10,6 +10,7 @@ import { createCommentSocket } from "./service/socketComment.mjs";
 import dotenv from "dotenv";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
+import configCorsNew from "./config/configCorsNew.mjs";
 
 dotenv.config();
 
@@ -21,7 +22,7 @@ const http = createServer(app);
 const PORT = process.env.PORT || 8081;
 
 // config cors
-configCors(app);
+configCorsNew(app);
 
 //config cookie-parser
 app.use(cookieParser());
