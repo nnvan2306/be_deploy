@@ -132,17 +132,6 @@ const getTicketService = async (calendarId) => {
             where: { calendarId: calendarId },
             include: {
                 model: db.Calendar,
-                include: [
-                    {
-                        model: db.Stadium,
-                        include: {
-                            model: db.Stand,
-                        },
-                    },
-                    {
-                        model: db.Team,
-                    },
-                ],
             },
         });
 

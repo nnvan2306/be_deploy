@@ -127,6 +127,7 @@ class TicketController {
 
     async handleGetTicket(req, res) {
         try {
+            console.log(req.query.calendarId);
             let fetch = await ticketService.getTicketService(
                 +req.query.calendarId
             );
