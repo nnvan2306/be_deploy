@@ -85,6 +85,7 @@ const handleGetRatingSeasonService = async (seasonId) => {
                             "hostGoal",
                             "guestGoal",
                             "date",
+                            "seasonId",
                         ],
                     },
                 ],
