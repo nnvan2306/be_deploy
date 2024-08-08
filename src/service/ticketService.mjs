@@ -139,6 +139,9 @@ const getTicketService = async (calendarId) => {
                             model: db.Stand,
                         },
                     },
+                    {
+                        model: db.Team,
+                    },
                 ],
             },
         });
