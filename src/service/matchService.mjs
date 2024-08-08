@@ -41,6 +41,8 @@ const createMatchService = async (data) => {
             return funcReturn("Match is exits !", 1, []);
         }
 
+        console.log(data);
+
         await db.Match.create({
             title: data.title,
             meta: data.meta,
@@ -64,6 +66,8 @@ const createMatchService = async (data) => {
             guestId: data.guestId,
             seasonId: data.seasonId,
         });
+
+        console.log("ok");
 
         let match = await handleGetOneMatch(data);
 
