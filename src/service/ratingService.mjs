@@ -79,7 +79,13 @@ const handleGetRatingSeasonService = async (seasonId) => {
                 include: [
                     {
                         model: db.Match,
-                        where: { seasonId: seasonId },
+                        attributes: [
+                            "hostId",
+                            "guestId",
+                            "hostGoal",
+                            "guestGoal",
+                            "date",
+                        ],
                     },
                 ],
             },
