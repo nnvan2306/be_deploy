@@ -91,16 +91,6 @@ const handleGetRatingSeasonService = async (seasonId) => {
             },
         });
 
-        ratingSort = ratingSort.map((rating) => ({
-            ...rating.get(),
-            Teams: rating.Teams.map((team) => ({
-                ...team.get(),
-                Matches: team.Matches.filter(
-                    (match) => match.seasonId === seasonId
-                ),
-            })),
-        }));
-
         return funcReturn(`rating season ${seasonId}`, 0, rating);
     } catch (err) {
         console.log(err);
