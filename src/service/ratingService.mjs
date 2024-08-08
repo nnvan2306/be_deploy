@@ -79,7 +79,6 @@ const handleGetRatingSeasonService = async (seasonId) => {
                 include: [
                     {
                         model: db.Match,
-                        where: { seasonId: seasonId },
                         attributes: [
                             "hostId",
                             "guestId",
@@ -87,11 +86,20 @@ const handleGetRatingSeasonService = async (seasonId) => {
                             "guestGoal",
                             "date",
                         ],
-                        through: { attributes: [] },
                     },
                 ],
             },
         });
+
+        ratingSort = ratingSort.map((rating) => ({
+            ...rating.get(),
+            Teams: rating.Teams.map((team) => ({
+                ...team.get(),
+                Matches: team.Matches.filter(
+                    (match) => match.seasonId === seasonId
+                ),
+            })),
+        }));
 
         return funcReturn(`rating season ${seasonId}`, 0, rating);
     } catch (err) {
