@@ -127,12 +127,10 @@ class TicketController {
 
     async handleGetTicket(req, res) {
         try {
-            console.log("runnnnnnnnnnn");
             let fetch = await ticketService.getTicketService(
                 +req.query.calendarId
             );
 
-            console.log(fetch);
             return res
                 .status(
                     fetch.errorCode === 0
