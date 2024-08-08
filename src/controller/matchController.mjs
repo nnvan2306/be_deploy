@@ -8,6 +8,7 @@ class matchController {
         try {
             let data = req.body;
             // let data = JSON.stringify(req.body);
+            console.log("run");
 
             if (
                 !data.title ||
@@ -27,6 +28,8 @@ class matchController {
                 ...req.body,
                 match_url: req.file.filename,
             };
+
+            console.log(dataBuider);
 
             let fetch = await matchService.createMatchService(dataBuider);
 
