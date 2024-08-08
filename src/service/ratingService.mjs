@@ -92,10 +92,6 @@ const handleGetRatingSeasonService = async (seasonId) => {
             },
         });
 
-        rating.forEach((element) => {
-            console.log(element.toJSON().Team);
-        });
-
         rating = await rating.map((item) => {
             const ratingData = item.toJSON();
             return {
@@ -108,8 +104,6 @@ const handleGetRatingSeasonService = async (seasonId) => {
                 },
             };
         });
-
-        console.log(rating);
 
         return funcReturn(`rating season ${seasonId}`, 0, rating);
     } catch (err) {
