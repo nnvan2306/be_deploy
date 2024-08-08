@@ -9,7 +9,6 @@ class Rating extends Model {
     static associate(models) {
         // Define associations here
         Rating.belongsTo(models.Team);
-        // Rating.belongsTo(models.Season);
     }
 }
 

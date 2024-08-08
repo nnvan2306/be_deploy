@@ -9,7 +9,6 @@ class Season extends Model {
     static associate(models) {
         // define association here
         Season.hasMany(models.Statistic);
-        // Season.hasMany(models.Rating);
         Season.hasMany(models.Match);
         Season.belongsToMany(models.Team, { through: "Team_Season" });
     }
