@@ -77,12 +77,16 @@ class UserController {
                     httpOnly: true,
                     secure: true,
                     path: "/",
+                    sameSite: "Strict",
+                    domain: "api.nha.vandev.top",
                 });
                 await res.cookie("refresh_token", login.data.refresh_token, {
                     maxAge: 365 * 24 * 60 * 60 * 1000,
                     httpOnly: true,
                     secure: true,
                     path: "/",
+                    sameSite: "Strict",
+                    domain: "api.nha.vandev.top",
                 });
             }
             return res
