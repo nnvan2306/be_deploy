@@ -91,6 +91,19 @@ const handleGetRatingSeasonService = async (seasonId) => {
             },
         });
 
+        rating = await rating.map((item) => {
+            const ratingData = item.toJSON();
+            return {
+                ...ratingData,
+                Team: {
+                    ...ratingData.Team,
+                    Matches: ratingData.Team.Matches.filter(
+                        (itemChild) => itemChild.seasonId === seasonId
+                    ),
+                },
+            };
+        });
+
         return funcReturn(`rating season ${seasonId}`, 0, rating);
     } catch (err) {
         console.log(err);
