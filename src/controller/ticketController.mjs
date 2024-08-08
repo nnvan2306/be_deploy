@@ -131,6 +131,7 @@ class TicketController {
                 +req.query.calendarId
             );
 
+            console.log("fetch>>>>", fetch);
             return res
                 .status(
                     fetch.errorCode === 0
