@@ -130,9 +130,6 @@ const getTicketService = async (calendarId) => {
     try {
         let tickets = await db.Ticket.findAll({
             where: { calendarId: calendarId },
-            include: {
-                model: db.Calendar,
-            },
         });
 
         return funcReturn("tickets", 0, tickets);
