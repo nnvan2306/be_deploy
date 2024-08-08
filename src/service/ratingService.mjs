@@ -100,6 +100,8 @@ const handleGetRatingSeasonService = async (seasonId) => {
                 ),
             })),
         }));
+
+        return funcReturn(`rating season ${seasonId}`, 0, ratings);
     } catch (err) {
         console.log(err);
         return returnErrService();
