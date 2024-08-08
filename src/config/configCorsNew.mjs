@@ -9,6 +9,7 @@ export default function configCorsNew(app) {
             "https://fe-nha-admin.vercel.app",
             "http://localhost:3000",
             "http://localhost:5173",
+            "https://fe-nha-production.vercel.app",
         ],
         credentials: true,
     };
