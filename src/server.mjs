@@ -35,7 +35,6 @@ configCorsNew(app);
 //config cookie-parser
 app.use(cookieParser());
 
-//connect socket với HTTPS server và cấu hình CORS
 const io = new SocketIO(httpsServer, {
     cors: {
         origin: "https://fe-nha-production.vercel.app",
@@ -68,8 +67,3 @@ app.use("/v1/images", express.static(__dirname + "/public/avatarUsers"));
 
 //init API routes
 initApiRoutes(app);
-
-// Lắng nghe trên HTTPS server
-httpsServer.listen(PORT, () => {
-    console.log("backend is running on port:", PORT);
-});
