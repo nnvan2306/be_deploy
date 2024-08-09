@@ -28,6 +28,13 @@ configCorsNew(app);
 app.use(cookieParser());
 
 //connect socket
+const io = new SocketIO(http, {
+    cors: {
+        // origin: "http://localhost:3000",
+        origin: "https://fe-nha-production.vercel.app",
+        methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    },
+});
 
 io.on("connect", (socket) => {
     createCommentSocket(socket);
