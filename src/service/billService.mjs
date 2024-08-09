@@ -2,6 +2,7 @@ import returnErrService from "../helps/returnErrService.mjs";
 import db from "../models/index.mjs";
 import funcReturn from "../helps/funcReturn.mjs";
 import * as ticketService from "./ticketService.mjs";
+import { where } from "sequelize";
 
 const handleCheckBillExits = async (uuid) => {
     let bill = await db.Bill.findOne({
@@ -81,9 +82,6 @@ const getLimitBillService = async (page, pageSize) => {
                             model: db.Calendar,
                             include: [
                                 {
-                                    model: db.Team,
-                                },
-                                {
                                     model: db.Stadium,
                                 },
                             ],
@@ -92,6 +90,7 @@ const getLimitBillService = async (page, pageSize) => {
                 },
             ],
         });
+
         let data = {
             items: rows,
             meta: {
