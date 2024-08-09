@@ -76,7 +76,6 @@ const getLimitBillService = async (page, pageSize) => {
             include: [
                 {
                     model: db.Ticket,
-                    as: "TicketAlias",
                     include: [
                         {
                             model: db.Calendar,
