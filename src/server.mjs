@@ -1,5 +1,6 @@
 import express from "express";
-
+import { createServer } from "http";
+import { Server as SocketIO } from "socket.io";
 import testConnection from "./config/connectDb.mjs";
 import initApiRoutes from "./routes/api.mjs";
 import configCors from "./config/configCors.mjs";
@@ -27,6 +28,13 @@ configCorsNew(app);
 app.use(cookieParser());
 
 //connect socket
+const io = new SocketIO(http, {
+    cors: {
+        // origin: "http://localhost:3000",
+        origin: "https://fe-nha-production.vercel.app",
+        methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    },
+});
 
 io.on("connect", (socket) => {
     createCommentSocket(socket);
