@@ -8,7 +8,7 @@ class Bill extends Model {
      */
     static associate(models) {
         // define association here
-        Bill.belongsTo(models.Ticket, { as: "TicketAlias" });
+        Bill.belongsTo(models.Ticket);
     }
 }
 
