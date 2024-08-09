@@ -21,7 +21,6 @@ const __dirname = dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 8081;
 
-// Đường dẫn tới các file chứng chỉ SSL
 const httpsServer = createServer(
     {
         key: readFileSync(

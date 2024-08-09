@@ -13,9 +13,7 @@ const handleCheckCountRatingSeason = async (seasonId) => {
     let ratings = await db.Rating.findAll({
         where: { seasonId: seasonId },
     });
-    if (ratings.length < 20) {
-        return true;
-    }
+
     return false;
 };
 
