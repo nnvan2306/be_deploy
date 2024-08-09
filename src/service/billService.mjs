@@ -79,14 +79,6 @@ const getLimitBillService = async (page, pageSize) => {
                     include: [
                         {
                             model: db.Calendar,
-                            include: [
-                                {
-                                    model: db.Team,
-                                },
-                                {
-                                    model: db.Stadium,
-                                },
-                            ],
                         },
                     ],
                 },
