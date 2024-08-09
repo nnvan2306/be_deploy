@@ -1,6 +1,5 @@
 import express from "express";
-import { createServer } from "https";
-import { Server } from "socket.io";
+
 import testConnection from "./config/connectDb.mjs";
 import initApiRoutes from "./routes/api.mjs";
 import configCors from "./config/configCors.mjs";
@@ -11,7 +10,6 @@ import dotenv from "dotenv";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 import configCorsNew from "./config/configCorsNew.mjs";
-import { readFileSync } from "fs";
 
 dotenv.config();
 
@@ -19,14 +17,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const app = express();
+const http = createServer(app);
 const PORT = process.env.PORT || 8081;
-
-const httpsServer = createServer({
-    key: readFileSync("/etc/letsencrypt/live/api.nha.vandev.top/privkey.pem"),
-    cert: readFileSync(
-        "/etc/letsencrypt/live/api.nha.vandev.top/fullchain.pem"
-    ),
-});
 
 // config cors
 configCorsNew(app);
@@ -35,13 +27,6 @@ configCorsNew(app);
 app.use(cookieParser());
 
 //connect socket
-const io = new Server(httpsServer, {
-    cors: {
-        // origin: "http://localhost:3000",
-        origin: "https://fe-nha-production.vercel.app",
-        methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    },
-});
 
 io.on("connect", (socket) => {
     createCommentSocket(socket);
