@@ -1,5 +1,4 @@
 import express from "express";
-import { createServer } from "https";
 import { Server as SocketIO } from "socket.io";
 import testConnection from "./config/connectDb.mjs";
 import initApiRoutes from "./routes/api.mjs";
