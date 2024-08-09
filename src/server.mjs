@@ -11,6 +11,7 @@ import dotenv from "dotenv";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 import configCorsNew from "./config/configCorsNew.mjs";
+import { readFileSync } from "fs";
 
 dotenv.config();
 
@@ -18,7 +19,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const app = express();
-const http = createServer(app);
 const PORT = process.env.PORT || 8081;
 
 // config cors
@@ -28,13 +28,6 @@ configCorsNew(app);
 app.use(cookieParser());
 
 //connect socket
-const io = new SocketIO(http, {
-    cors: {
-        // origin: "http://localhost:3000",
-        origin: "https://fe-nha-production.vercel.app",
-        methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    },
-});
 
 io.on("connect", (socket) => {
     createCommentSocket(socket);
