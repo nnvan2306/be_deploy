@@ -1,5 +1,6 @@
 import express from "express";
 import { createServer } from "https"; // Sử dụng https thay vì http
+import { Server } from "socket.io";
 import testConnection from "./config/connectDb.mjs";
 import initApiRoutes from "./routes/api.mjs";
 import bodyParser from "body-parser";
@@ -36,13 +37,6 @@ configCorsNew(app);
 
 //config cookie-parser
 app.use(cookieParser());
-
-const io = new SocketIO(httpsServer, {
-    cors: {
-        origin: "https://fe-nha-production.vercel.app",
-        methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    },
-});
 
 io.on("connect", (socket) => {
     createCommentSocket(socket);
