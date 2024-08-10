@@ -38,6 +38,13 @@ configCorsNew(app);
 //config cookie-parser
 app.use(cookieParser());
 
+const io = new Server(httpsServer, {
+    cors: {
+        origin: "https://fe-nha-production.vercel.app",
+        methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    },
+});
+
 io.on("connect", (socket) => {
     createCommentSocket(socket);
 });
