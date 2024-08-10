@@ -3,14 +3,13 @@ import { createServer } from "https"; // Sử dụng https thay vì http
 import { Server as SocketIO } from "socket.io";
 import testConnection from "./config/connectDb.mjs";
 import initApiRoutes from "./routes/api.mjs";
-import configCors from "./config/configCors.mjs";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import { createCommentSocket } from "./service/socketComment.mjs";
 import dotenv from "dotenv";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
-import { readFileSync } from "fs"; // Đọc file hệ thống
+import { readFileSync } from "fs";
 import configCorsNew from "./config/configCorsNew.mjs";
 
 dotenv.config();
