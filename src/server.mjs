@@ -42,6 +42,7 @@ const io = new Server(httpsServer, {
     cors: {
         origin: "https://fe-nha-production.vercel.app",
         methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        credentials: true,
     },
 });
 
