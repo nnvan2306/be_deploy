@@ -26,7 +26,6 @@ const httpsServer = createServer(
             "/etc/letsencrypt/live/api.nha.vandev.top/privkey.pem"
         ),
         cert: readFileSync("/etc/letsencrypt/live/api.nha.vandev.top/cert.pem"),
-        ca: readFileSync("/etc/letsencrypt/live/api.nha.vandev.top/chain.pem"),
     },
     app
 );
