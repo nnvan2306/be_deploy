@@ -1,5 +1,5 @@
 import express from "express";
-import { createServer } from "https"; // Sử dụng https thay vì http
+import { createServer } from "https";
 import { Server } from "socket.io";
 import testConnection from "./config/connectDb.mjs";
 import initApiRoutes from "./routes/api.mjs";
@@ -45,6 +45,7 @@ const io = new Server(httpsServer, {
         methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
         credentials: true,
     },
+    transports: ["websocket"],
 });
 
 io.on("connect", (socket) => {
