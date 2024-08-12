@@ -5,6 +5,7 @@ module.exports = {
             script: "./src/server.js",
             env: {
                 PORT: 8080,
+                NEXT_URL: "https://fe-nha-production.vercel.app",
                 JWT_SECRET: "ngongocvan",
                 JWT_SERECT_REFRESH: "vanngo",
                 JWT_EXPIRES_ACCESS: "3s",
