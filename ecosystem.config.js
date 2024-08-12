@@ -2,6 +2,7 @@ module.exports = {
     apps: [
         {
             name: "be_deploy",
+            script: "./src/server.mjs",
             env: {
                 PORT: 8080,
                 NEXT_URL: "https://fe-nha-production.vercel.app",
