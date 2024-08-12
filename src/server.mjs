@@ -53,6 +53,8 @@ io.on("connect", (socket) => {
 });
 
 //config body parser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //test connection
 try {
