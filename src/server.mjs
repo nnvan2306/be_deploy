@@ -73,3 +73,7 @@ app.use("/v1/images", express.static(__dirname + "/public/avatarUsers"));
 
 //init API routes
 initApiRoutes(app);
+
+httpsServer.listen(8081, () => {
+    console.log("backend is running on port:", 8081);
+});
