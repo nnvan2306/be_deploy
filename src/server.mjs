@@ -21,6 +21,19 @@ const __dirname = dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 8081;
 
+const httpsServer = https.createServer(
+    {
+        key: readFileSync(
+            "/etc/letsencrypt/live/api.nha.vandev.top/privkey.pem"
+        ),
+        cert: readFileSync("/etc/letsencrypt/live/api.nha.vandev.top/cert.pem"),
+        ca: [
+            readFileSync("/etc/letsencrypt/live/api.nha.vandev.top/chain.pem"),
+        ],
+    },
+    app
+);
+
 // config cors
 configCorsNew(app);
 
