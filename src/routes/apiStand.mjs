@@ -5,22 +5,10 @@ import express from "express";
 const router = express.Router();
 
 const initApiStand = (app) => {
-    router.post(
-        "/create-stand",
-        // jwtAction.handleCheckToken,
-        standController.handleCreateStand
-    );
-    router.delete(
-        "/delete-stand",
-        // jwtAction.handleCheckToken,s
-        standController.handleDeleteStand
-    );
+    router.post("/create-stand", standController.handleCreateStand);
+    router.delete("/delete-stand", standController.handleDeleteStand);
     router.get("/get-stand", standController.handleGetStand);
-    router.put(
-        "/update-stand",
-        // jwtAction.handleCheckToken,
-        standController.handleUpdateStand
-    );
+    router.put("/update-stand", standController.handleUpdateStand);
     return app.use("/v1", router);
 };
 

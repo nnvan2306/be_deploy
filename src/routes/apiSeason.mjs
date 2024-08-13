@@ -11,16 +11,8 @@ const initApiSeason = (app) => {
         seasonController.handleCreateSeason
     );
     router.get("/get-season", seasonController.handleGetLimitSeasons);
-    router.delete(
-        "/delete-season",
-        // jwtAction.handleCheckToken,
-        seasonController.handleDeleteSeason
-    );
-    router.put(
-        "/update-season",
-        // jwtAction.handleCheckToken,
-        seasonController.handleUpdateSeason
-    );
+    router.delete("/delete-season", seasonController.handleDeleteSeason);
+    router.put("/update-season", seasonController.handleUpdateSeason);
 
     return app.use("/v1", router);
 };

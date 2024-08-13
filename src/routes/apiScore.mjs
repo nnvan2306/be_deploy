@@ -6,21 +6,9 @@ const router = express.Router();
 
 const initApiScore = (app) => {
     router.get("/get-scored", scoredController.handleGetScored);
-    router.delete(
-        "/delete-scored",
-        // jwtAction.handleCheckToken,
-        scoredController.handleDeleteScored
-    );
-    router.post(
-        "/create-scored",
-        // jwtAction.handleCheckToken,
-        scoredController.handleCreateScored
-    );
-    router.put(
-        "/update-scored",
-        // jwtAction.handleCheckToken,
-        scoredController.handleUpdateScored
-    );
+    router.delete("/delete-scored", scoredController.handleDeleteScored);
+    router.post("/create-scored", scoredController.handleCreateScored);
+    router.put("/update-scored", scoredController.handleUpdateScored);
 
     return app.use("/v1", router);
 };

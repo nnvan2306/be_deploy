@@ -5,30 +5,14 @@ import express from "express";
 const router = express.Router();
 
 const initApiTicket = (app) => {
-    router.post(
-        "/create-ticket",
-        // jwtAction.handleCheckToken,
-        ticketController.handleCreateTicket
-    );
-    router.put(
-        "/update-ticket",
-        // jwtAction.handleCheckToken,
-        ticketController.handleUpdateTicket
-    );
+    router.post("/create-ticket", ticketController.handleCreateTicket);
+    router.put("/update-ticket", ticketController.handleUpdateTicket);
     router.patch(
         "/update-booking-ticket",
         ticketController.handleUpdateBookingTicket
     );
-    router.delete(
-        "/delete-ticket",
-        // jwtAction.handleCheckToken,
-        ticketController.handleDeleteTicket
-    );
-    router.delete(
-        "/delete-all-ticket",
-        // jwtAction.handleCheckToken,
-        ticketController.handleDeleteAllTicket
-    );
+    router.delete("/delete-ticket", ticketController.handleDeleteTicket);
+    router.delete("/delete-all-ticket", ticketController.handleDeleteAllTicket);
     router.get("/get-ticket", ticketController.handleGetTicket);
     router.get("/get-one-ticket", ticketController.handleGetOneTicket);
 
