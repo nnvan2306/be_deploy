@@ -77,7 +77,6 @@ export const handleCheckRoleAdmin = (req, res) => {
     try {
         const path = req.headers.cookie;
 
-        console.log("token >>>", req.headers);
         if (!path) {
             return res.status(400).json(funcReturn("token empty ", 1, []));
         }
