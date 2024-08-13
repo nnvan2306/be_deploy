@@ -132,6 +132,9 @@ class UserController {
                 res.cookie("access_token", fetch.data.access_token, {
                     maxAge: 3 * 1000,
                     httpOnly: true,
+                    secure: true,
+                    path: "/",
+                    sameSite: "None",
                 });
             }
             return res
