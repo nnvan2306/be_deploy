@@ -5,10 +5,22 @@ import express from "express";
 const router = express.Router();
 
 const initApiRating = (app) => {
-    router.post("/create-rating", ratingController.handleCreateRating);
+    router.post(
+        "/create-rating",
+        jwtAction.handleCheckToken,
+        ratingController.handleCreateRating
+    );
     router.get("/get-rating", ratingController.handleGetRating);
-    router.delete("/delete-rating", ratingController.handleDeleteRating);
-    router.put("/update-rating", ratingController.handleUpdateRating);
+    router.delete(
+        "/delete-rating",
+        jwtAction.handleCheckToken,
+        ratingController.handleDeleteRating
+    );
+    router.put(
+        "/update-rating",
+        jwtAction.handleCheckToken,
+        ratingController.handleUpdateRating
+    );
 
     return app.use("/v1", router);
 };

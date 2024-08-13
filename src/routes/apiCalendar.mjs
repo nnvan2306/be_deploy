@@ -5,10 +5,22 @@ import express from "express";
 const router = express.Router();
 
 const initApiCalendar = (app) => {
-    router.post("/create-calendar", calendarController.handleCreateCalendar);
+    router.post(
+        "/create-calendar",
+        jwtAction.handleCheckToken,
+        calendarController.handleCreateCalendar
+    );
     router.get("/get-calender", calendarController.handleGetCalendar);
-    router.delete("/delete-calendar", calendarController.handleDeleteCalendar);
-    router.put("/update-calendar", calendarController.handleUpdateCalendar);
+    router.delete(
+        "/delete-calendar",
+        jwtAction.handleCheckToken,
+        calendarController.handleDeleteCalendar
+    );
+    router.put(
+        "/update-calendar",
+        jwtAction.handleCheckToken,
+        calendarController.handleUpdateCalendar
+    );
     router.get(
         "/get-nearest-calendar",
         calendarController.handleGetNearestCalendar
