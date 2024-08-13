@@ -76,14 +76,12 @@ class UserController {
                     httpOnly: true,
                     secure: true,
                     path: "/",
-                    sameSite: "Strict",
                 });
                 await res.cookie("refresh_token", login.data.refresh_token, {
                     maxAge: 365 * 24 * 60 * 60 * 1000,
                     httpOnly: true,
                     secure: true,
                     path: "/",
-                    sameSite: "Strict",
                 });
             }
             return res
