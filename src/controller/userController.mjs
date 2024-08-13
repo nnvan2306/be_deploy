@@ -107,9 +107,6 @@ class UserController {
 
     async handleLogout(req, res) {
         try {
-            // await res.clearCookie("access_token");
-            // await res.clearCookie("refresh_token");
-
             return res.status(200).json(funcReturn("logout success", 0, []));
         } catch (err) {
             console.log(err);
