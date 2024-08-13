@@ -7,7 +7,7 @@ const router = express.Router();
 const initApiSeason = (app) => {
     router.post(
         "/create-season",
-        // jwtAction.handleCheckToken,s
+
         seasonController.handleCreateSeason
     );
     router.get("/get-season", seasonController.handleGetLimitSeasons);
