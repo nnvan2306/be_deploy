@@ -71,14 +71,12 @@ class UserController {
             let login = await userService.loginService(user);
 
             if (login.errorCode === 0) {
-                console.log("login>>>>", login);
                 await res.cookie("access_token", login.data.access_token, {
                     maxAge: 3 * 1000,
                     httpOnly: true,
                     secure: true,
                     path: "/",
                     sameSite: "Strict",
-                    domain: "api.nha.vandev.top",
                 });
                 await res.cookie("refresh_token", login.data.refresh_token, {
                     maxAge: 365 * 24 * 60 * 60 * 1000,
@@ -86,7 +84,6 @@ class UserController {
                     secure: true,
                     path: "/",
                     sameSite: "Strict",
-                    domain: "api.nha.vandev.top",
                 });
             }
             return res
