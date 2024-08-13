@@ -11,7 +11,6 @@ import { fileURLToPath } from "url";
 import { dirname } from "path";
 import { readFileSync } from "fs";
 import configCorsNew from "./config/configCorsNew.mjs";
-import https from "https";
 
 dotenv.config();
 
@@ -20,19 +19,6 @@ const __dirname = dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 8081;
-
-const httpsServer = https.createServer(
-    {
-        key: readFileSync(
-            "/etc/letsencrypt/live/api.nha.vandev.top/privkey.pem"
-        ),
-        cert: readFileSync("/etc/letsencrypt/live/api.nha.vandev.top/cert.pem"),
-        ca: [
-            readFileSync("/etc/letsencrypt/live/api.nha.vandev.top/chain.pem"),
-        ],
-    },
-    app
-);
 
 // config cors
 configCorsNew(app);
@@ -74,3 +60,7 @@ app.use("/v1/images", express.static(__dirname + "/public/avatarUsers"));
 
 //init API routes
 initApiRoutes(app);
+
+app.listen(PORT, () => {
+    console.log("backend is running on port:", PORT);
+});
